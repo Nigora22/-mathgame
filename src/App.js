@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import img1 from "./win.png";
+import img from "./lose.png";
 function App() {
   const getTrueAnswer = () => eval(`${a}${sign}${b}`);
   const getRandomNumber = () => Math.floor(Math.random() * 49) + 1;
@@ -115,17 +117,9 @@ function App() {
       <div className="level">
         level: <span id="level">{level}</span>
       </div>
-      <a
-        href="https://algorismic.uz"
-        className="d-inline-block mb-4"
-        target="_blank"
-      >
-        <img src="./img/logo.png" className="logo" alt="" />
-      </a>
-
       <div id="gameModal" className={!isGameOver && "d-none"}>
         <div id="win" className="panel d-none">
-          <img src="img/win.png" alt="" />
+          <img src={img1} alt="" />
           <h1>
             Congratulations. New record: <span id="lastLevelWin">10</span>
           </h1>
@@ -137,7 +131,7 @@ function App() {
           </button>
         </div>
         <div id="lose" className={`panel ${!isGameOver && "d-none"}`}>
-          <img src="img/lose.png" alt="" />
+          <img src={img} alt="" />
           <h1 className="fw-bold">Game Over</h1>
           <h1 className="fw-bold">
             Level: <span id="lastLevelLose">10</span>
